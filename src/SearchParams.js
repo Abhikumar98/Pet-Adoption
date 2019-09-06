@@ -30,7 +30,7 @@ const SearchParams = () => {
       const breedStrings = breedAPI.map(({ name }) => name);
       setBreeds(breedStrings);
     })
-  }, [animal, breed, setBreed])
+  }, [animal])
 
   return (
     <div className='search-params' >
@@ -39,7 +39,10 @@ const SearchParams = () => {
         requestPets();
       }}>
         <label htmlFor='location'>
-          <input type='text' value={location} onChange={(e) => setLocation(e.target.value)} placeholder='Location please' />
+          <input type='text' 
+                 value={location} 
+                 onChange={(e) => setLocation(e.target.value)} 
+                 placeholder='Location please' />
         </label>
         <AnimalDropdown />
         <BreedDropdown />

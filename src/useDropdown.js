@@ -3,7 +3,10 @@ import React, { useState } from 'react'
 const useDropdown = (label, defaultState, options) => {
     const [state, setState] = useState(defaultState);
     const id = `use-dropdown-${label.replace(' ','').toLowerCase()}`;
-
+    console.log("label        =====> ",label);
+    console.log("defaultState =====> ", defaultState);
+    console.log("options      =====> ", options);
+    
     const Dropdown = () => (
         <label htmlFor={id}>
             {label}
@@ -14,6 +17,7 @@ const useDropdown = (label, defaultState, options) => {
                 onBlur={e => setState(e.target.value)}
                 disabled={options.length === 0}
             >
+                <option value='All'>All</option>
                 {
                     options.map( item => (
                         <option value={item} key={item}>{item}</option>
