@@ -1,5 +1,4 @@
 import React from 'react'
-import App from './App';
 import Pet from './Pet';
 
 const Results = (props) => {

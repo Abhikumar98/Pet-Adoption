@@ -1,54 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import './style.css';
-import pet, { ANIMALS } from '@frontendmasters/pet';
-import useDropdown from './useDropdown';
-import Results from './Results';
-
+import React from 'react'
+import SearchParams from './SearchParams';
+import Details from './Details';
+import { Router, Link } from '@reach/router';
 
 const App = () => {
-  const [location, setLocation] = useState('Seattle, WA');
-  const [breeds, setBreeds] = useState([]);
-  const [animal, AnimalDropdown] = useDropdown('Animals', 'dog', ANIMALS);
-  const [breed, BreedDropdown, setBreed] = useDropdown('Breeds', '', breeds);
-  const [pets, setpets] = useState([]);
-
-  async function requestPets(){
-    const { animals } = await pet.animals({
-      location,
-      breed,
-      type: animal
-    })
-
-    setpets(animals || []);
-  }
-  
-  useEffect(()=>{
-    setBreeds([]);
-    setBreed('');
-
-    pet.breeds(animal).then(({ breeds: breedAPI }) => {
-      const breedStrings = breedAPI.map(({ name }) => name);
-      setBreeds(breedStrings);
-    })
-  }, [animal, breed, setBreed])
-
-  return (
-    <div className='search-params' >
-      <h1>Adopt me!</h1>
-      <form onSubmit={(e)=>{
-        e.preventDefault();
-        requestPets();
-      }}>
-        <label htmlFor='location'>
-          <input type='text' value={location} onChange={(e) => setLocation(e.target.value)} placeholder='Location please' />
-        </label>
-        <AnimalDropdown />
-        <BreedDropdown />
-        <button type='submit'>Submit</button>
-      </form>
-      <Results pets={pets} />
-    </div>
-  );
+    return(
+        <React.StrictMode>
+            <div>
+                <header>
+                    <Link to='/'>Adopt me!</Link>
+                </header>
+                <Router>
+                    <SearchParams path='/' />
+                    <Details path='/details/:id'/>
+                </Router>
+            </div>
+        </React.StrictMode>
+    )
 }
 
 export default App;
