@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Pet-Adoption/static/css/main.7ba63ecf.chunk.css",
+    "main.js": "/Pet-Adoption/static/js/main.06350f89.chunk.js",
+    "main.js.map": "/Pet-Adoption/static/js/main.06350f89.chunk.js.map",
+    "runtime~main.js": "/Pet-Adoption/static/js/runtime~main.72867f80.js",
+    "runtime~main.js.map": "/Pet-Adoption/static/js/runtime~main.72867f80.js.map",
+    "static/js/2.1916a3fb.chunk.js": "/Pet-Adoption/static/js/2.1916a3fb.chunk.js",
+    "static/js/2.1916a3fb.chunk.js.map": "/Pet-Adoption/static/js/2.1916a3fb.chunk.js.map",
+    "index.html": "/Pet-Adoption/index.html",
+    "precache-manifest.fab727a53ed56d863e2e39d993b4129c.js": "/Pet-Adoption/precache-manifest.fab727a53ed56d863e2e39d993b4129c.js",
+    "service-worker.js": "/Pet-Adoption/service-worker.js",
+    "static/css/main.7ba63ecf.chunk.css.map": "/Pet-Adoption/static/css/main.7ba63ecf.chunk.css.map"
+  }
+}
